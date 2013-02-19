@@ -1,0 +1,74 @@
+<!doctype html>
+  <head>
+    <title>CORS Test Page</title>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+    <script>
+      var server = 'http://localhost:10000';
+      var api = server + '/yoyo';
+
+      $(document).ready(function () {
+        var log = function (msg) {
+          $('#message').text(msg);
+        };
+
+        $('#get').click(function () {
+          log('getting value')
+          $.ajax({
+            url: api,
+            dataType: 'json',
+            processData: false,
+            type: 'GET',
+            xhrFields: {
+               withCredentials: true
+            },
+            success: function (data) {
+              log('got value:' + data.data)
+              $('#get-result').text(data.data);
+            },
+            error: function () {
+              log('something bad happened, could not get value')
+            }
+          });
+          return false;
+        });
+
+        $('#set').click(function () {
+          var value = $('#set-source').val();
+          log('setting value: ' + value)
+          $.ajax({
+            url: api,
+            type: 'PUT',
+            dataType: 'json',
+            processData: false,
+            data: JSON.stringify({
+              data: value
+            }),
+            xhrFields: {
+//               withCredentials: true
+            },
+            success: function (data) {
+              log('successfully set value')
+            },
+            error: function () {
+              log('something bad happened, could not set value')
+            }
+          });
+          return false;
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <p>
+      The general idea is that this page is loaded by apache or nginx on your local
+      box and points to the running test server.
+    </p>
+    <div id="message"></div>
+    <div>
+      <a id="get" href="#">Get value</a> ~> <span id="get-result"></span>
+    </div>
+    <div>
+      <a id="set" href="#">Set value</a> ~> <input id="set-source" type="text" value="">
+    </div>
+  </body>
+</html>
