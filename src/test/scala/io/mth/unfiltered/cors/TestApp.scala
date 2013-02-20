@@ -9,7 +9,7 @@ class TestApp extends unfiltered.filter.Plan {
   case class Data(value: String)
 
   implicit def DataEncodeJson: EncodeJson[Data] =
-    jencode1L((d: Data) => d.value)("data", "")
+    jencode1L((d: Data) => d.value)("data")
   implicit def DataDecodeJson: DecodeJson[Data] =
     jdecode1L(Data.apply)("data")
 
