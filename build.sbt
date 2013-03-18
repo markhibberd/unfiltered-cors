@@ -12,7 +12,7 @@ libraryDependencies ++= Seq(
   "net.databinder" %% "unfiltered" % "0.6.7",
   "net.databinder" %% "unfiltered-filter" % "0.6.7" % "test",
   "net.databinder" %% "unfiltered-jetty" % "0.6.7" % "test",
-  "io.argonaut" %% "argonaut" % "6.0-SNAPSHOT" % "test" cross(CrossVersion.full)
+  "io.argonaut" %% "argonaut" % "6.0-M3" % "test" cross(CrossVersion.full)
 )
 
 resolvers ++= Seq(
