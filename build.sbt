@@ -19,6 +19,8 @@ resolvers ++= Seq(
   "oss releases" at "http://oss.sonatype.org/content/repositories/releases"
 )
 
+releaseSettings
+
 publishMavenStyle := true
 
 publishArtifact in Test := false
