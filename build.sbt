@@ -4,7 +4,7 @@ name := "unfiltered-cors"
 
 scalaVersion := "2.10.0"
 
-crossScalaVersions := Seq("2.9.2", "2.9.3", "2.10.0")
+crossScalaVersions := Seq("2.9.2", "2.10.0")
 
 libraryDependencies ++= Seq(
   "net.databinder" %% "unfiltered" % "0.6.7",
