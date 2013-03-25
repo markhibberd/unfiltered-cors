@@ -25,7 +25,7 @@ class TestApp extends unfiltered.filter.Plan {
   val ref = new java.util.concurrent.atomic.AtomicReference("initial")
 
   val cors = Cors(
-    CorsConfig.origins("http://localhost")
+    CorsConfig.origins("http://localhost" :: Nil)
   )
 
   def intent = cors {
