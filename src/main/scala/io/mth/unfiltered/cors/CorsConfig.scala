@@ -18,7 +18,7 @@ case class CorsConfig(
 }
 
 object CorsConfig {
-  def origins(origins: String*) = CorsConfig(
+  def origins(origins: List[String]) = CorsConfig(
     origins.contains(_),
     (_: String) => true,
     (_: List[String]) => true,
