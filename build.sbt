@@ -2,15 +2,15 @@ organization := "io.mth"
 
 name := "unfiltered-cors"
 
-scalaVersion := "2.10.0"
+scalaVersion := "2.11.6"
 
-crossScalaVersions := Seq("2.9.2", "2.10.0")
+crossScalaVersions := Seq("2.10.0", "2.11.6")
 
 libraryDependencies ++= Seq(
-  "net.databinder" %% "unfiltered" % "0.6.7",
-  "net.databinder" %% "unfiltered-filter" % "0.6.7" % "test",
-  "net.databinder" %% "unfiltered-jetty" % "0.6.7" % "test",
-  "io.argonaut" %% "argonaut" % "6.0-M3" % "test"
+  "net.databinder" %% "unfiltered" % "0.8.4",
+  "net.databinder" %% "unfiltered-filter" % "0.8.4" % "test",
+  "net.databinder" %% "unfiltered-jetty" % "0.8.4" % "test",
+  "io.argonaut" %% "argonaut" % "6.1" % "test"
 )
 
 resolvers ++= Seq(
@@ -19,7 +19,7 @@ resolvers ++= Seq(
   "oss releases" at "http://oss.sonatype.org/content/repositories/releases"
 )
 
-releaseSettings
+releaseCrossBuild := true
 
 publishMavenStyle := true
 
