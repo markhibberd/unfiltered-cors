@@ -7,10 +7,10 @@ scalaVersion := "2.11.6"
 crossScalaVersions := Seq("2.10.4", "2.11.6")
 
 libraryDependencies ++= Seq(
-  "net.databinder" %% "unfiltered" % "0.8.4",
-  "net.databinder" %% "unfiltered-filter" % "0.8.4" % "test",
-  "net.databinder" %% "unfiltered-jetty" % "0.8.4" % "test",
-  "io.argonaut" %% "argonaut" % "6.1" % "test"
+  "ws.unfiltered" %% "unfiltered" % "0.9.1",
+  "ws.unfiltered" %% "unfiltered-filter" % "0.9.1" % "test",
+  "ws.unfiltered" %% "unfiltered-jetty" % "0.9.1" % "test",
+  "io.argonaut" %% "argonaut" % "6.2" % "test"
 )
 
 resolvers ++= Seq(
