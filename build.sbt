@@ -2,9 +2,9 @@ organization := "io.mth"
 
 name := "unfiltered-cors"
 
-scalaVersion := "2.11.6"
+scalaVersion := "2.12.4"
 
-crossScalaVersions := Seq("2.10.4", "2.11.6")
+crossScalaVersions := Seq("2.10.4", "2.11.6", "2.12.4")
 
 libraryDependencies ++= Seq(
   "ws.unfiltered" %% "unfiltered" % "0.9.1",
